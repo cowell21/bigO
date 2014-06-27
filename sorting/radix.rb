@@ -12,29 +12,17 @@ class Radix
   end
 
   def int_buckets
-    {}.tap do |buckets|
-      10.times do |el|
-        buckets[el] = []
-      end
-    end
+    {}.tap { |buckets| 10.times { |el| buckets[el] = [] } }
   end
 
   def make_buckets(arr, mod)
     buckets = int_buckets
-
-    arr.each do |el|
-      buckets[(el / mod) % 10].push(el)
-    end
-
+    arr.each { |el| buckets[(el / mod) % 10].push(el) }
     buckets
   end
 
   def merge_buckets(buckets)
-    [].tap do |newArr|
-      buckets.each do |key, val|
-        newArr.concat(val)
-      end
-    end
+    [].tap { |newArr| buckets.each { |key, val| newArr.concat(val) } }
   end
 
 end
