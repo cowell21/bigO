@@ -1,5 +1,4 @@
 def binarySearch(arr, tar)
-
   return nil if arr.length == 1 && arr[0] != tar
   mid = arr.length / 2
 
