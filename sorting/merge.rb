@@ -12,14 +12,10 @@ def merge(lower, higher)
   arr = []
 
   until lower.empty? || higher.empty?
-    if lower[0] < higher[0]
-      arr.push(lower.shift)
-    else
-      arr.push(higher.shift)
-    end
+    (lower[0] < higher[0]) ? arr << lower.shift : arr << higher.shift
   end
 
-  lower.empty? ? arr.concat(higher) : arr.concat(lower)
+  arr.concat(lower).concat(higher)
 end
 
 arr = [4,3,8,7,5,2,-6,1,9,15,11]
