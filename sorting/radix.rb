@@ -24,7 +24,6 @@ class Radix
   def merge_buckets(buckets)
     [].tap { |newArr| buckets.each { |key, val| newArr.concat(val) } }
   end
-
 end
 
 arr = [101,1,9,99,0,2,122,70,100,4,300,8,9]
