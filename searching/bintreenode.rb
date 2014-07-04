@@ -26,7 +26,7 @@ class BinTreeNode
      queue.push(current_node.right) if current_node.right
      break if (queue.empty?)
     end
-  end # will print in
+  end
 
 end
 
