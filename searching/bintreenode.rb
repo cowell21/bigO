@@ -28,6 +28,16 @@ class BinTreeNode
     end
   end
 
+  def dfs(target, path = [])
+    return (path << self.value) if self == target
+    temp = self.left.dfs(target, (path + [self.value])) if self.left
+    return temp if temp
+    temp = self.right.dfs(target, (path + [self.value])) if self.right
+    return temp if temp
+
+    nil
+  end
+
 end
 
 a = BinTreeNode.new("a")
@@ -35,13 +45,14 @@ b = BinTreeNode.new("b", a)
 c = BinTreeNode.new("c", a)
 d = BinTreeNode.new("d", b)
 e = BinTreeNode.new("e", b)
+f = BinTreeNode.new("f", c)
 g = BinTreeNode.new("g", c)
-h = BinTreeNode.new("h", c)
 d1 = BinTreeNode.new("d1", d)
 d2 = BinTreeNode.new("d2", d)
 
-a.bfs
-puts ""
+#a.bfs
+p a.dfs(f)
+
 
 #       A
 #      / \
