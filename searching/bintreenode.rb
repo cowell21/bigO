@@ -33,9 +33,8 @@ class BinTreeNode
     temp = self.left.dfs(target, (path + [self.value])) if self.left
     return temp if temp
     temp = self.right.dfs(target, (path + [self.value])) if self.right
-    return temp if temp
 
-    nil
+    temp ? temp : nil
   end
 
 end
