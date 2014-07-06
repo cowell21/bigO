@@ -50,7 +50,7 @@ d1 = BinTreeNode.new("d1", d)
 d2 = BinTreeNode.new("d2", d)
 
 #a.bfs
-p a.dfs(f)
+#p a.dfs(f)
 
 
 #       A
